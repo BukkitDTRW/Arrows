@@ -1,0 +1,13 @@
+name: '${project.name}'
+description: '${project.description}'
+version: '${project.version}'
+load: 'POSTWORLD'
+author: 'JustChunks'
+authors: ['Scrayos']
+website: '${project.url}'
+api-version: '1.13'
+main: '${project.groupId}.${project.artifactId}.${project.name}'
+depend: []
+softdepend: []
+loadbefore: []
+prefix: 'Ar'
