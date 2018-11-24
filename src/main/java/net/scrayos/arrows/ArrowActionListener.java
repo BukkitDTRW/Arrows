@@ -22,7 +22,7 @@ public class ArrowActionListener implements Listener {
         Location loc = e.getEntity().getLocation();
 
         //loc.getWorld().createExplosion(loc, 8);
-        loc.getWorld().spawnEntity(loc, EntityType.ZOMBIE);
+        loc.getWorld().spawnEntity(loc, EntityType.HORSE);
 
         new BukkitRunnable() {
             @Override
