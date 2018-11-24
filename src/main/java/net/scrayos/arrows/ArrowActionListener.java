@@ -21,7 +21,8 @@ public class ArrowActionListener implements Listener {
         // create explosion at point of impact
         Location loc = e.getEntity().getLocation();
 
-        loc.getWorld().createExplosion(loc, 8);
+        //loc.getWorld().createExplosion(loc, 8);
+        loc.getWorld().spawnEntity(loc, EntityType.ZOMBIE);
 
         new BukkitRunnable() {
             @Override
