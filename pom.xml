@@ -12,6 +12,11 @@
     <artifactId>arrows</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <java.version>11</java.version>
+        <build.sourceEncoding>utf-8</build.sourceEncoding>
+    </properties>
+
     <repositories>
         <repository>
             <id>papermc</id>
@@ -82,6 +87,27 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <targetJdk>${java.version}</targetJdk>
+                    <minimumTokens>100</minimumTokens>
+                    <sourceEncoding>${build.sourceEncoding}</sourceEncoding>
+                    <printFailingErrors>true</printFailingErrors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>verify-optimization</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>check</goal>
+                            <goal>cpd-check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <!-- compiles the project-sources into classes -->
             <plugin>
@@ -94,8 +120,8 @@
                     <encoding>UTF-8</encoding>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
